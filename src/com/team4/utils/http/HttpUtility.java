@@ -78,9 +78,11 @@ public class HttpUtility {
 				String content = EntityUtils.toString(response.getEntity());
 				return parser.parse(content);
 			} catch (ParseException e) {
+				T4Log.v("ParseException:"+e.getMessage());
 				throw new T4Exception(T4Code.PARSE_ERROR,
 						e.getLocalizedMessage());
 			} catch (IOException e) {
+				T4Log.v("IOException:"+e.getMessage());
 				throw new T4Exception(T4Code.PARSE_ERROR,
 						e.getLocalizedMessage());
 			}
@@ -92,16 +94,17 @@ public class HttpUtility {
 
 	public static HttpResponse execute(HttpClient client, HttpUriRequest request)
 			throws T4Exception {
-
 		HttpResponse response = null;
 		for (int retries = 0; response == null && retries < 5; retries++) {
 			T4Log.v("execute before");
 			try {
 				response = client.execute(request);
 			} catch (ClientProtocolException e) {
+				T4Log.v("ClientProtocolException:"+e.getMessage());
 				throw new T4Exception(T4Code.NETWORK_ERROR,
 						e.getLocalizedMessage());
-			} catch (IOException e) {
+			} catch (IOException e) { 
+				T4Log.v("IOException11:"+e.getMessage());
 				throw new T4Exception(T4Code.NETWORK_ERROR,
 						e.getLocalizedMessage());
 			}
