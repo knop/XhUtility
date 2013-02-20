@@ -1,4 +1,12 @@
 package com.team4.utils.parser;
+/**
+ * JSON解析接口类
+ * 
+ * @author Xiaohui Chen
+ * @date 2013-02-20
+ *
+ */
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,12 +1,13 @@
 package com.team4.utils.exceptions;
-
 /**
- * Represents the common errors. The value always mean that your call is not right.
+ * 定义程序中的通用错误提示码
+ * 在使用中可扩展此类的内容
  * 
  * @author Xiaohui Chen
  * @date 2012-6-25
  *
  */
+
 public class T4Code {
 	public static final int UNKNOWN = -1;
 	

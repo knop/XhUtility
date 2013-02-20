@@ -1,12 +1,12 @@
 package com.team4.utils.exceptions;
-
 /**
- * Encapsulates an T4Exception that includes a code and a message.
+ * 通用异常类，定义了异常Code和异常Message两个信息.
  * 
  * @author Xiaohui Chen
  * @date 2012-6-25
  *
  */
+
 public class T4Exception extends Exception {
 	
 	private static final long serialVersionUID = 7043110700738563425L;

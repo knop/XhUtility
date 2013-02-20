@@ -1,14 +1,14 @@
 package com.team4.utils.util;
-
-import android.util.Log;
-
 /**
- * Trace the log that you want to.
+ * Log类.
  * 
  * @author Xiaohui Chen
  * @date 2012-7-3
  *
  */
+
+import android.util.Log;
+
 public class T4Log {
 	private final static String TAG = "T4Log";
 	

@@ -1,4 +1,11 @@
 package com.team4.utils.http;
+/**
+ * Http请求相关的类，可适用大部分的CS程序实现
+ * 
+ * @author Xiaohui Chen
+ * @date 2013-02-20
+ *
+ */
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

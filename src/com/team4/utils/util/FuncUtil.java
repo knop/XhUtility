@@ -1,4 +1,11 @@
 package com.team4.utils.util;
+/**
+ * 通用函数集合
+ * 
+ * 
+ * @author Xiaohui Chen
+ * 2013-02-30
+ */
 
 import android.content.Context;
 

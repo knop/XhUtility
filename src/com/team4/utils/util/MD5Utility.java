@@ -1,4 +1,11 @@
 package com.team4.utils.util;
+/**
+ * MD5编码工具类
+ * 
+ * 
+ * @author Xiaohui Chen
+ * 2013-02-30
+ */
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
