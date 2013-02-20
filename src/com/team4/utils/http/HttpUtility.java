@@ -63,13 +63,13 @@ public class HttpUtility {
 	}
 	
 	public static IBaseType executeHttpRequest(HttpRequestBase request,
-			IParser<? extends IBaseType> parser) throws T4Exception {
+			IParser<IBaseType> parser) throws T4Exception {
 		HttpClient client = createHttpClient(DEFAULT_TIMEOUT);
 		return executeHttpRequest(client, request, parser);
 	}
 
 	public static IBaseType executeHttpRequest(HttpClient client,
-			HttpRequestBase request, IParser<? extends IBaseType> parser)
+			HttpRequestBase request, IParser<IBaseType> parser)
 			throws T4Exception {
 		HttpResponse response = execute(client, request);
 		int statusCode = response.getStatusLine().getStatusCode();
