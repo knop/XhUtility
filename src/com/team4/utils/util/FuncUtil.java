@@ -2,6 +2,7 @@ package com.team4.utils.util;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
     
 /**
 *  @Project       : XhUtility
@@ -80,5 +81,31 @@ public class FuncUtil {
 		}
 
 		return type;
+	}
+	
+	/** 
+	*  @Description    : 判断SD卡是否可用
+	*  @return
+	*  @Creation Date  : 2013-3-1 下午2:35:08 
+	*  @Author         : Xiaohui Chen
+	*/
+	public static boolean isAvailableSDCard() {
+		return externalMemoryAvailable();
+	}
+	
+	/** 
+	*  @Description    : 判断额外的存储是否可用
+	*  @return
+	*  @Creation Date  : 2013-3-1 下午2:35:36 
+	*  @Author         : Xiaohui Chen
+	*/
+	public static boolean externalMemoryAvailable() {
+		String state = Environment.getExternalStorageState();
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 }
