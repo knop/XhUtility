@@ -1,4 +1,6 @@
 package com.team4.utils.util;
+import java.util.Random;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -107,5 +109,38 @@ public class FuncUtil {
 			return false;
 		}
 
+	}
+	
+	/** 
+	*  @Author Xiaohui Chen
+	*  @Creation 2013-3-1 下午4:20:59 
+	*  @param length 需要生成字符串的长度
+	*  @return
+	*  @Description 生成随机数字符串
+	*
+	*/
+	public static String genRandomNum(int length) {
+		final int maxNum = 10;
+		int i; 
+		int count = 0; 
+		/*
+		 * char[] str = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+		 * 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		 * 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+		 */
+
+		char[] str = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+		StringBuffer strResult = new StringBuffer("");
+		Random r = new Random();
+		while (count < length) {
+			i = Math.abs(r.nextInt(maxNum)); 
+			if (i >= 0 && i < str.length) {
+				strResult.append(str[i]);
+				count++;
+			}
+		}
+
+		return strResult.toString();
 	}
 }

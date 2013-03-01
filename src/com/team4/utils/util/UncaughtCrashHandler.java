@@ -140,10 +140,7 @@ public class UncaughtCrashHandler implements UncaughtExceptionHandler {
 		T4Log.e("crash: " + result);
 		sb.append(result);
 		try {
-			long timestamp = System.currentTimeMillis();
-			DateFormat formatter = DateFormat.getDateTimeInstance();
-			String time = formatter.format(new Date());
-			String fileName = "log-" + time + "-" + timestamp + ".log";
+			String fileName = "log-" + FuncUtil.genRandomNum(10) + ".log";
 			if (FuncUtil.isAvailableSDCard()) {
 				String path = Environment.getExternalStorageDirectory() + LOG_PATH;
 				File dir = new File(path);
