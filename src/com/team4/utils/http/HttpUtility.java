@@ -110,7 +110,7 @@ public class HttpUtility {
 
 	public static HttpResponse execute(Context context, HttpClient client, HttpUriRequest request)
 			throws T4Exception {
-		if (FuncUtil.networkIsConnected(context))
+		if (!FuncUtil.networkIsConnected(context))
 			throw new T4Exception(T4Code.NETWORK_ERROR, "Network not connected!");
 		HttpResponse response = null;
 		for (int retries = 0; response == null && retries < 5; retries++) {
