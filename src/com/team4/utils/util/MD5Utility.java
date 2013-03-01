@@ -1,11 +1,4 @@
 package com.team4.utils.util;
-/**
- * MD5编码工具类
- * 
- * 
- * @author Xiaohui Chen
- * 2013-02-30
- */
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -14,6 +7,19 @@ import java.security.NoSuchAlgorithmException;
 
 import com.team4.utils.exceptions.T4Exception;
 
+/**
+*  @Project       : XhUtility
+*  @Program Name  : com.team4.utils.util.MD5Utility.java
+*  @Class Name    : MD5Utility
+*  @Description   : MD5编码工具类
+*  @Author        : Xiaohui Chen
+*  @Creation Date : 2013-3-1 上午10:52:15 
+*  @ModificationHistory  
+*  Who            When          What 
+*  ------------   -----------   ------------------------------------
+*  Xiaohui Chen   2013-3-1       Create
+*
+*/
 public class MD5Utility {
 	public static final String CHARSET_NAME = "UTF-8";
 	

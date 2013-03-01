@@ -1,13 +1,18 @@
 package com.team4.utils.exceptions;
-/**
- * 定义程序中的通用错误提示码
- * 在使用中可扩展此类的内容
- * 
- * @author Xiaohui Chen
- * @date 2012-6-25
- *
- */
 
+/**
+*  @Project       : XhUtility
+*  @Program Name  : com.team4.utils.exceptions.T4Code.java
+*  @Class Name    : T4Code
+*  @Description   : 定义程序中的通用错误提示码，在使用中可扩展此类的内容
+*  @Author        : Xiaohui Chen
+*  @Creation Date : 2013-3-1 上午10:55:13 
+*  @ModificationHistory  
+*  Who            When          What 
+*  ------------   -----------   ------------------------------------
+*  Xiaohui Chen   2013-3-1       Create
+*
+*/
 public class T4Code {
 	//通用异常编码
 	public static final int UNKNOWN = -1;

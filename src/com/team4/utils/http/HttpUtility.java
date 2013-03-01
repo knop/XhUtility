@@ -1,11 +1,4 @@
 package com.team4.utils.http;
-/**
- * Http请求相关的类，可适用大部分的CS程序实现
- * 
- * @author Xiaohui Chen
- * @date 2013-02-20
- *
- */
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -53,12 +46,28 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
+import android.content.Context;
+
 import com.team4.utils.exceptions.T4Code;
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.parser.IParser;
 import com.team4.utils.type.IBaseType;
+import com.team4.utils.util.FuncUtil;
 import com.team4.utils.util.T4Log;
 
+/**
+*  @Project       : XhUtility
+*  @Program Name  : com.team4.utils.http.HttpUtility.java
+*  @Class Name    : HttpUtility
+*  @Description   : Http请求相关的类，可适用于大部分CS程序。
+*  @Author        : Xiaohui Chen
+*  @Creation Date : 2013-3-1 上午10:47:12 
+*  @ModificationHistory  
+*  Who            When          What 
+*  ------------   -----------   ------------------------------------
+*  Xiaohui Chen   2013-3-1       Create
+*  
+*/
 public class HttpUtility {
 
 	private static final String USER_AGENT = "User-Agent";
@@ -69,16 +78,16 @@ public class HttpUtility {
 	private HttpUtility() {
 	}
 	
-	public static IBaseType executeHttpRequest(HttpRequestBase request,
+	public static IBaseType executeHttpRequest(Context context, HttpRequestBase request,
 			IParser<IBaseType> parser) throws T4Exception {
 		HttpClient client = createHttpClient(DEFAULT_TIMEOUT);
-		return executeHttpRequest(client, request, parser);
+		return executeHttpRequest(context, client, request, parser);
 	}
 
-	public static IBaseType executeHttpRequest(HttpClient client,
+	public static IBaseType executeHttpRequest(Context context, HttpClient client,
 			HttpRequestBase request, IParser<IBaseType> parser)
 			throws T4Exception {
-		HttpResponse response = execute(client, request);
+		HttpResponse response = execute(context, client, request);
 		int statusCode = response.getStatusLine().getStatusCode();
 		if (statusCode == HttpStatus.SC_OK) {
 			try {
@@ -99,8 +108,10 @@ public class HttpUtility {
 		}
 	}
 
-	public static HttpResponse execute(HttpClient client, HttpUriRequest request)
+	public static HttpResponse execute(Context context, HttpClient client, HttpUriRequest request)
 			throws T4Exception {
+		if (FuncUtil.networkIsConnected(context))
+			throw new T4Exception(T4Code.NETWORK_ERROR, "Network not connected!");
 		HttpResponse response = null;
 		for (int retries = 0; response == null && retries < 5; retries++) {
 			T4Log.v("execute before");
@@ -111,7 +122,7 @@ public class HttpUtility {
 				throw new T4Exception(T4Code.NETWORK_ERROR,
 						e.getLocalizedMessage());
 			} catch (IOException e) { 
-				T4Log.v("IOException11:"+e.getMessage());
+				T4Log.v("IOException:"+e.getMessage());
 				throw new T4Exception(T4Code.NETWORK_ERROR,
 						e.getLocalizedMessage());
 			}

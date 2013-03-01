@@ -1,14 +1,20 @@
 package com.team4.utils.util;
-/**
- * Log类.
- * 
- * @author Xiaohui Chen
- * @date 2012-7-3
- *
- */
 
 import android.util.Log;
 
+/**
+*  @Project       : XhUtility
+*  @Program Name  : com.team4.utils.util.T4Log.java
+*  @Class Name    : T4Log
+*  @Description   : Log类。其中 {@link mLogLevel}字段可设定需要打印Log的级别。
+*  @Author        : Xiaohui Chen
+*  @Creation Date : 2013-3-1 上午10:52:34 
+*  @ModificationHistory  
+*  Who            When          What 
+*  ------------   -----------   ------------------------------------
+*  Xiaohui Chen   2013-3-1       Create
+*
+*/
 public class T4Log {
 	private final static String TAG = "T4Log";
 	

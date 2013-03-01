@@ -1,12 +1,18 @@
 package com.team4.utils.exceptions;
-/**
- * 通用异常类，定义了异常Code和异常Message两个信息.
- * 
- * @author Xiaohui Chen
- * @date 2012-6-25
- *
- */
 
+/**
+*  @Project       : XhUtility
+*  @Program Name  : com.team4.utils.exceptions.T4Exception.java
+*  @Class Name    : T4Exception
+*  @Description   : 通用异常类，定义了异常Code和异常Message两个信息.
+*  @Author        : Xiaohui Chen
+*  @Creation Date : 2013-3-1 上午10:54:58 
+*  @ModificationHistory  
+*  Who            When          What 
+*  ------------   -----------   ------------------------------------
+*  Xiaohui Chen   2013-3-1       Create
+*
+*/
 public class T4Exception extends Exception {
 	
 	private static final long serialVersionUID = 7043110700738563425L;
