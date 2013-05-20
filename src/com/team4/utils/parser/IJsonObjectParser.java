@@ -1,8 +1,9 @@
 package com.team4.utils.parser;
 
+import org.json.JSONObject;
+
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.type.IBaseType;
-import org.json.JSONArray;
 
 /**
 *  @Project       : XhUtility
@@ -16,5 +17,6 @@ import org.json.JSONArray;
 *  ------------   -----------   ------------------------------------
 *  Xiaohui Chen   2013-3-1       Create
 */
-public interface IJsonParser {
+public interface IJsonObjectParser extends IJsonParser {
+	public IBaseType parse(JSONObject json) throws T4Exception;
 }

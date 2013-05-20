@@ -16,6 +16,6 @@ import com.team4.utils.type.IBaseType;
 *  Xiaohui Chen   2013-3-1       Create
 *
 */
-public interface IParser<T extends IBaseType> {
-    public abstract T parse(String content) throws T4Exception;
+public interface IParser {
+	public IBaseType parse(String content) throws T4Exception;
 }

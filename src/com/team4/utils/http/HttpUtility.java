@@ -68,7 +68,7 @@ import com.team4.utils.util.T4Log;
 *  Xiaohui Chen   2013-3-1       Create
 *  
 */
-public class HttpUtility {
+public class HttpUtility { 
 
 	private static final String USER_AGENT = "User-Agent";
 	private static final int DEFAULT_TIMEOUT = 15;
@@ -79,13 +79,13 @@ public class HttpUtility {
 	}
 	
 	public static IBaseType executeHttpRequest(Context context, HttpRequestBase request,
-			IParser<IBaseType> parser) throws T4Exception {
+			IParser parser) throws T4Exception {
 		HttpClient client = createHttpClient(DEFAULT_TIMEOUT);
 		return executeHttpRequest(context, client, request, parser);
 	}
 
 	public static IBaseType executeHttpRequest(Context context, HttpClient client,
-			HttpRequestBase request, IParser<IBaseType> parser)
+			HttpRequestBase request, IParser parser)
 			throws T4Exception {
 		HttpResponse response = execute(context, client, request);
 		int statusCode = response.getStatusLine().getStatusCode();
