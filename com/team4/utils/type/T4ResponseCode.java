@@ -11,18 +11,54 @@ package com.team4.utils.type;
  * ------------   -----------   ------------------------------------
  * Xiaohui Chen   2013-3-1       Create
  */
-public class T4ResponseCode implements IBaseType {
+public class T4ResponseCode {
 
-    private int mResponseCode;
+	private int code;
+	private String description;
+	private boolean success;
 
-    public T4ResponseCode() {
-    }
+	/**
+	*  @BareFieldName : code
+	*  @return  the code
+	*/
+	public int getCode() {
+		return code;
+	}
 
-    public int getResponseCode() {
-        return mResponseCode;
-    }
+	/**
+	 * @param code the code to set
+	 */
+	public void setCode(int code) {
+		this.code = code;
+	}
 
-    public void setResponseCode(int rc) {
-        mResponseCode = rc;
-    }
+	/**
+	*  @BareFieldName : description
+	*  @return  the description
+	*/
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	*  @BareFieldName : success
+	*  @return  the success
+	*/
+	public boolean isSuccess() {
+		return success;
+	}
+
+	/**
+	 * @param success the success to set
+	 */
+	public void setSuccess(boolean success) {
+		this.success = success;
+	}
 }

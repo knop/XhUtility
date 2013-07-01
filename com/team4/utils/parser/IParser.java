@@ -1,7 +1,6 @@
 package com.team4.utils.parser;
 
 import com.team4.utils.exceptions.T4Exception;
-import com.team4.utils.type.IBaseType;
 
 /**
  * @Project : XhUtility
@@ -15,5 +14,5 @@ import com.team4.utils.type.IBaseType;
  * Xiaohui Chen   2013-3-1       Create
  */
 public interface IParser {
-    public IBaseType parse(String content) throws T4Exception;
+    public <T> T parse(String content, Class<T> valueType) throws T4Exception;
 }

@@ -51,7 +51,6 @@ import android.content.Context;
 import com.team4.utils.exceptions.T4Code;
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.parser.IParser;
-import com.team4.utils.type.IBaseType;
 import com.team4.utils.util.FuncUtil;
 import com.team4.utils.util.T4Log;
 
@@ -76,21 +75,21 @@ public class HttpUtility {
     private HttpUtility() {
     }
 
-    public static IBaseType executeHttpRequest(Context context, HttpRequestBase request,
-                                               IParser parser) throws T4Exception {
+    public static <T> T executeHttpRequest(Context context, HttpRequestBase request,
+                                               IParser parser, Class<T> retType) throws T4Exception {
         HttpClient client = createHttpClient(DEFAULT_TIMEOUT);
-        return executeHttpRequest(context, client, request, parser);
+        return executeHttpRequest(context, client, request, parser, retType);
     }
 
-    public static IBaseType executeHttpRequest(Context context, HttpClient client,
-                                               HttpRequestBase request, IParser parser)
+    public static <T> T executeHttpRequest(Context context, HttpClient client,
+                                               HttpRequestBase request, IParser parser, Class<T> retType)
             throws T4Exception {
         HttpResponse response = execute(context, client, request);
         int statusCode = response.getStatusLine().getStatusCode();
         if (statusCode == HttpStatus.SC_OK) {
             try {
                 String content = EntityUtils.toString(response.getEntity());
-                return parser.parse(content);
+                return parser.parse(content, retType);
             } catch (ParseException e) {
                 T4Log.v("ParseException:" + e.getMessage());
                 throw new T4Exception(T4Code.PARSE_ERROR,
@@ -138,8 +137,13 @@ public class HttpUtility {
     public static HttpGet createHttpGet(String url, String userAgent,
                                         List<BasicNameValuePair> nameValuePairs) {
         T4Log.v("creating HttpGet for: " + url);
-        String query = URLEncodedUtils.format(nameValuePairs, HTTP.UTF_8);
-        HttpGet httpGet = new HttpGet(url + "?" + query);
+        HttpGet httpGet;
+        if (nameValuePairs == null) {
+        	httpGet = new HttpGet(url);
+        } else {
+        	String query = URLEncodedUtils.format(nameValuePairs, HTTP.UTF_8);
+        	httpGet = new HttpGet(url + "?" + query);
+        }
         httpGet.addHeader(USER_AGENT, userAgent);
         T4Log.v("Created: " + httpGet.getURI());
         return httpGet;
