@@ -1,4 +1,4 @@
-package com.team4.utils.http;
+﻿package com.team4.utils.http;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -74,12 +74,16 @@ public class HttpUtility {
     private static final int KEEP_ALIVE_MONITOR_INTERVAL_SECS = 5;
 
     private HttpUtility() {
+HttpUtility
+HttpUtility
+HttpUtility
     }
 
     public static IBaseType executeHttpRequest(Context context, HttpRequestBase request,
                                                IParser parser) throws T4Exception {
         HttpClient client = createHttpClient(DEFAULT_TIMEOUT);
         return executeHttpRequest(context, client, request, parser);
+HttpUtilityHttpUtility
     }
 
     public static IBaseType executeHttpRequest(Context context, HttpClient client,
