@@ -74,11 +74,10 @@ public class HttpUtility {
     private static final int KEEP_ALIVE_MONITOR_INTERVAL_SECS = 5;
 
     private HttpUtility() {
+HttpUtilityafdasf
 HttpUtility
 HttpUtility111
 HttpUtility111
-knop0211@gmail.com
-knop0211@gmail.com
     }
 
     public static IBaseType executeHttpRequest(Context context, HttpRequestBase request,
