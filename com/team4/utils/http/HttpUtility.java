@@ -58,8 +58,7 @@ import com.team4.utils.util.T4Log;
  * @Project : XhUtility
  * @Program Name  : com.team4.utils.http.HttpUtility.java
  * @Class Name    : HttpUtility
- * @Description : Http请求相关的类，可适用于大部分CS程序。
- * @Author : Xiaohui Chen
+ * @Description : Http请求相关的类，可适用于大部分CS程序�? * @Author : Xiaohui Chen
  * @Creation Date : 2013-3-1 上午10:47:12
  * @ModificationHistory Who            When          What
  * ------------   -----------   ------------------------------------
