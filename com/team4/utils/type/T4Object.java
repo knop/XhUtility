@@ -1,5 +1,6 @@
 package com.team4.utils.type;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,7 +15,9 @@ import java.util.List;
  *  --------   ----------    -----------------------------------
  *  username   2013-6-22       TODO
  */
-public class T4Object<T> {
+public class T4Object<T> implements Serializable {
+	
+	private static final long serialVersionUID = -6374364770022849703L;
 	
 	private TMeta meta;
 	private List<T> objects;

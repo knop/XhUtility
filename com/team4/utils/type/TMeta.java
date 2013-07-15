@@ -1,5 +1,7 @@
 package com.team4.utils.type;
 
+import java.io.Serializable;
+
 /**
  *  @Project       : TPO
  *  @Program Name  : com.team4.utils.type.TMeta.java
@@ -12,8 +14,10 @@ package com.team4.utils.type;
  *  --------   ----------    -----------------------------------
  *  username   2013-6-18       TODO
  */
-public class TMeta {
+public class TMeta implements Serializable {
 
+	private static final long serialVersionUID = -1592649847955754074L;
+	
 	private int total_count;
 	private int offset;
 	private int limit;

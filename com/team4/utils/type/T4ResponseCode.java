@@ -1,5 +1,7 @@
 package com.team4.utils.type;
 
+import java.io.Serializable;
+
 /**
  * @Project : XhUtility
  * @Program Name  : com.team4.utils.type.T4ResponseCode.java
@@ -11,11 +13,14 @@ package com.team4.utils.type;
  * ------------   -----------   ------------------------------------
  * Xiaohui Chen   2013-3-1       Create
  */
-public class T4ResponseCode {
+public class T4ResponseCode<T> implements Serializable {
 
+	private static final long serialVersionUID = -5796441190185810079L;
+	
 	private int code;
 	private String description;
 	private boolean success;
+	private T data;
 
 	/**
 	*  @BareFieldName : code
@@ -60,5 +65,20 @@ public class T4ResponseCode {
 	 */
 	public void setSuccess(boolean success) {
 		this.success = success;
+	}
+
+	/**
+	*  @BareFieldName : data
+	*  @return  the data
+	*/
+	public T getData() {
+		return data;
+	}
+
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(T data) {
+		this.data = data;
 	}
 }
