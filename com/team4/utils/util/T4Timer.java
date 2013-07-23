@@ -43,6 +43,10 @@ public class T4Timer {
 		}
 	}
 	
+	public boolean isPaused() {
+		return mIsPaused;
+	}
+	
 	public void resume() {
 		if (mIsPaused) {
 			mIsPaused = false;
